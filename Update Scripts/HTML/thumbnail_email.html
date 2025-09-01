@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>
+        New Thumbnail Images Required
+        </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <style>
+
+    body {
+    color: #003DAB;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #Image_Files {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      #Image_Files td, #customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+
+      #Image_Files tr {
+        color: black;
+      }
+      
+      #Image_Files tr:nth-child(even){background-color: #f2f2f2;}
+      
+      #Image_Files tr:hover {background-color: #ddd;}
+      
+      #Image_Files th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #2371B6;
+        color: white;
+      }
+      </style>
+    <body>
+        <h1>Thumbnail Images Required {{ timestamp }}</h1>
+        <br> 
+        <p>New images have been copied over from item docs to Z:\MARKETING\001 Image Processing\012 Master Thumbnail Imagery\Images to Process</p>
+        <p>Please process these images and move them to Z:\MARKETING\001 Image Processing\012 Master Thumbnail Imagery\Thumbnail Staging</p>
+        <br> 
+        <p>Please see below and atatched a table of the required Images</p>
+        <table id="Image_Files">
+            <tr>
+              <th>Item No</th>
+              <th>Brand Code</th>
+              <th>Description</th>
+              <th>Description 2</th>
+              <th>Colours</th>
+              <th>Size</th>
+              <th>Unit</th>
+              <th>Season</th>
+              <th>File Path</th>
+            </tr>
+            {% for item in items %}
+            <tr>
+                <td>{{ item["Item No"] }}</td>
+                <td>{{ item["Brand Code"] }}</td>
+                <td>{{ item["Description"] }}</td>
+                <td>{{ item["Description 2"] }}</td>
+                <td>{{ item["Colours"] }}</td>
+                <td>{{ item["Size 1"] }}</td>
+                <td>{{ item["Size 1 Unit"] }}</td>
+                <td>{{ item["Season"] }}</td>
+                <td>{{ item["Image Path"] }}</td>
+            </tr>
+            {% endfor %}
+          </table>
+        <script src="" async defer></script>
+    </body>
+</html>
